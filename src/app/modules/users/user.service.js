@@ -11,7 +11,7 @@ const getSingleUser = async (email) => {
     "title description status priority dueDate"
   );
   if (!user) {
-    throw new ApiError(httpStatus.NOT_FOUND, "User not found");
+    throw new ApiError(httpStatus.NOT_FOUND, "User not found!");
   }
   return user;
 };
