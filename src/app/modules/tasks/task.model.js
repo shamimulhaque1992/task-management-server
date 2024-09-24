@@ -1,5 +1,5 @@
 import mongoose, { Schema, model } from "mongoose";
-import ApiError from "../../../errors/ApiError";
+import ApiError from "../../../errors/ApiError.js";
 
 const taskSchema = new Schema(
   {
