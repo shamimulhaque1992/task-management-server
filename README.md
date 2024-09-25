@@ -72,7 +72,7 @@ DELETE: {{base_url}}task/66edca86a7315b06b5aa75f0
 
 ### User End points
 
-GET: {{base_url}}/user/khandokershamimudfasdlhaque@gmail.com
+GET: {{base_url}}/user/khandokershamimulhaque@gmail.com
 PATCH: {{base_url}}user/create-user
 PATCH: {{base_url}}task/preference
 
