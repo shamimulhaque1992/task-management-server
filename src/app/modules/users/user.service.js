@@ -53,7 +53,6 @@ const updateUserTaskStatus = async (userId, taskId, { status, priority }) => {
 
   if (!task) throw new Error("Task not assigned to this user");
 
-  console.log(userId, taskId, status, priority, task);
   // Update task status and/or priority
   if (status) task.status = status;
   if (priority) task.priority = priority;
@@ -62,10 +61,24 @@ const updateUserTaskStatus = async (userId, taskId, { status, priority }) => {
 
   return task;
 };
+// Update user preferences
+const updateUserPreferences = async (userId, preferences) => {
+  const user = await User.findById(userId);
+
+  if (!user) {
+    throw new ApiError(httpStatus.NOT_FOUND, "User not found!");
+  }
+
+  user.preferences = { ...user.preferences, ...preferences };
+  await user.save();
+
+  return user;
+};
 
 export const UserService = {
   getSingleUser,
   createUser,
   assignTaskToUser,
   updateUserTaskStatus,
+  updateUserPreferences,
 };

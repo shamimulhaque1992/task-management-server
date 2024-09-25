@@ -62,10 +62,23 @@ const updateTaskForUser = async (req, res) => {
     data: result,
   });
 };
+// Update user preferences
+const updateUserPreferences = catchAsync(async (req, res) => {
+  const { userId } = req.body;
+  const preferences = req.body.preferences;
+  const result = await UserService.updateUserPreferences(userId, preferences);
+
+  res.status(httpStatus.OK).json({
+    success: true,
+    message: "Preferences updated successfully!",
+    data: result,
+  });
+});
 
 export const UserController = {
   getSingleUser,
   createUser,
   assignTaskToUser,
   updateTaskForUser,
+  updateUserPreferences,
 };

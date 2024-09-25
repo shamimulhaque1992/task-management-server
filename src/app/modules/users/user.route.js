@@ -7,5 +7,6 @@ router.get("/:email", UserController.getSingleUser);
 router.patch("/create-user", UserController.createUser);
 router.post("/assign-task", UserController.assignTaskToUser);
 router.patch("/update-task", UserController.updateTaskForUser);
+router.patch("/preferences", UserController.updateUserPreferences);
 
 export const UserRoutes = router;
